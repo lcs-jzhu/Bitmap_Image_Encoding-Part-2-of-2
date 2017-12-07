@@ -20,26 +20,30 @@ import PlaygroundSupport
 
 // Copy your encoded image string here...
 let encodedBitmap = """
-a9a9a2
-a9a9a2
-a8,b5,a7
-a6,b9,a5
-a5,b9,b2,a5
-a4,b9,b3,a4
-a4,b2,a1,b7,a1,b2,a3
-a3,b2,a1,b9,a1,b2,a2
-a3,b1,a1,b1,a2,b5,a2,b1,a1,b1,a2
-a3,b2,a1,b2,a1,b3,a1,b2,a1,b2,a2
-a3,b2,e1,b9,e1,b2,a2
-a3,b1,e2,a9,e2,b1,a2
-a3,d1,e2,a1,f7,a1,e2,d1,a2
-a3,d3,a9,d3,a2
-a5,b3,a5,b3,a4
-a6,b9,a5
-a8,b5,a7
-a9a9a2
-a9a9a2
-a9a9a2
+a9,a9,a2
+a3,b1,c1,b1,c1,b1,c1,a9,a2
+a3,b1,c5,b1,c1,b1,c1,a9,a1
+a3,b1,c9,b2,a5
+a2,b1,c9,c2,b1,a5
+a2,b1,c9,c2,b1,a5
+a2,b3,c1,b4,c3,b1,a6
+a1,b1,d3,b1,d4,b1,c2,b1,,a6
+a1,b1,d1,b1,d1,b1,d2,b1,d1,b1,c2,b1,a6
+a1,b1,d3,b1,d4,b1,c1,b1,a7
+a1,b4,d4,b1,c1,b1,a8
+a2,b1,c3,b4,c2,a9
+a1,b1,c1,b2,c7,a8
+a1,b1,c9,c1,a8
+a1,b1,c7,b1,c1,b1,a8
+a2,b7,c2,b1,a8
+a5,b2,c4,b1,a8
+a6,b5,a9
+a9,a9,a2
+a9,a9,a2
+
+
+
+
 """
 
 // Make a canvas
@@ -103,28 +107,24 @@ for character in encodedBitmap {
         
     } else if character == "a" {
         
-        canvas.fillColor = Color.black
-        currentColor = "black"
+        canvas.fillColor = Color.red
+        currentColor = "red"
 
     } else if character == "b" {
         
-        canvas.fillColor = Color.yellow
+        canvas.fillColor = Color.black
+        currentColor = "black"
+        
+    } else if character == "c" {
+        
+       canvas.fillColor = Color.yellow
         currentColor = "yellow"
-        
     } else if character == "d" {
-        
-       canvas.fillColor = Color.blue
-        currentColor = "blue"
-    } else if character == "e" {
-        
-        canvas.fillColor = Color.init(hue: 185, saturation: 100, brightness: 80, alpha: 100)
-        currentColor = "Color.init(hue: 185, saturation: 100, brightness: 80, alpha: 100)"
-        
-    } else if character == "f" {
         
         canvas.fillColor = Color.white
         currentColor = "white"
-    } else {
+        
+    }  else {
         
         // Get the new number of pixels to draw
         drawThisManyPixels = Int(String(character))!
